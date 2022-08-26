@@ -1,0 +1,23 @@
+h1 {
+    text-align: center;
+}
+
+.posts {
+    margin: 100px;
+    height: 300px;
+    display: flex;
+}
+
+.post-content {
+    height: 250px;
+    margin: 20px;
+}
+
+.post-footer {
+    height: 50px;
+    background-color: skyblue;
+}
+
+.post-footer span {
+    margin: 10px;
+}
