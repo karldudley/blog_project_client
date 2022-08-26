@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'Playfair';
+    src: URL('./images/PlayfairDisplay-Bold.otf') format('truetype');
+  }
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: Playfair;
+    padding-top: 10px;
+    font-size: 80px;
+    text-align: center;
+}
+
+body {
+    background-color: rgb(10, 212, 94);
+}
+
+.navbar-custom {
+    background-color: lightgreen;
+}
+
+.nav-link {
+    color: darkgreen;
+}
+
+.navbar-nav {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.posts {
+    margin: 60px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: 40rem 500px;
+    align-items: center;
+    justify-content: space-evenly;
+    grid-row: auto auto;
+    grid-row-gap: 50px;
+}
+
+.post {
+    width: 40rem;
+}
+
+.post-header {
+    background-color: rgba(211, 211, 211, 0.315);
+}
+
+.postTitle {
+    margin: 10px;
+}
+
+.post-content {
+    height: 250px;
+    margin: 20px;
+}
+
+.post-footer {
+    height: 50px;
+    background-color: skyblue;
+    display: flex;
+}
+
+.post-footer p {
+    font-weight: bold;
+    margin: 12px;
+}
+
+.comments {
+    margin-right: 50px;
+}
+
+.post-buttons {
+    display: block;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-right: 10px;
+}
