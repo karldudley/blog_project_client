@@ -4,9 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello World!</h1>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="./newpost.html">Create Post</a>
+                </li>
+                <li>
+                    <a href="./posts.html">All Posts</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <h1 class="topTitles">Create Post</h1>
+    <article>
+        <form id="form">
+            <label for="title">Title</label>
+            <br>
+            <input type="text" name="title" id="titleForm" maxlength="50" required="">
+            <p id="titleCount">0/50</p>
+
+            <label for="description">Description</label>
+            <br>
+            <textarea id="descriptionForm" name="description" maxlength="150" required=""></textarea>
+            <p id="descriptionCount">0/150</p>
+
+            <label for="content">Content</label>
+            <br>
+            <textarea id="contentForm" name="content" maxlength="10000" required=""></textarea>
+            <p id="contentCount">0/10000</p>
+
+            <label id="gifTitle" for="gif">GIF</label>
+            <br>
+            <input type="text" id="gifForm" placeholder="Random GIF">
+
+            <br>
+
+            <input type="submit" id="submitForm" value="Create Post">
+        </form>
+    </article>
 </body>
 </html>
