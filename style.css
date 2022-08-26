@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 h1 {
     text-align: center;
 }
@@ -5,7 +9,17 @@ h1 {
 .posts {
     margin: 100px;
     height: 300px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 36rem 500px;
+    align-items: center;
+    justify-content: center;
+    grid-row: auto auto;
+    grid-column-gap: 100px;
+    grid-row-gap: 70px;
+}
+
+.post {
+    width: 36rem;
 }
 
 .post-content {
@@ -16,8 +30,16 @@ h1 {
 .post-footer {
     height: 50px;
     background-color: skyblue;
+    display: flex;
 }
 
-.post-footer span {
+.post-footer p {
     margin: 10px;
+}
+
+.post-buttons {
+    display: block;
+    margin-left: auto;
+    margin-top: 6px;
+    margin-right: 10px;
 }
