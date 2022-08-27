@@ -7,6 +7,7 @@
     <link rel="icon" type="image/x-icon" href="images/apple_fave.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script defer src="newpost.js"></script>
     <title>New Post</title>
 </head>
 <body>
@@ -47,14 +48,15 @@
             <textarea id="contentForm" name="content" maxlength="10000" required=""></textarea>
             <p id="contentCount">0/10000</p>
 
-            <label id="gifTitle" for="gif">GIF</label>
+            <label id="gifTitle" for="gifForm">GIF</label>
             <br>
-            <input type="text" id="gifForm" placeholder="Random GIF">
-
-            <br>
+            <input type="text" id="gifForm" placeholder="Search for a gif...">
+            <button id="gifButton">Go</button>
+            <div class="out"></div>
 
             <input type="submit" id="submitForm" value="Create Post">
         </form>
+          
     </article>
 </body>
 </html>
