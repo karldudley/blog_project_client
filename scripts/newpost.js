@@ -1,6 +1,29 @@
 //giphy api key
 let APIKEY = "5rOj5wnf6ba5PRgcSmo3sQoXBK4St48P";
 
+//switch between tabs
+function openTab(tabName) {
+  var i;
+  var x = document.getElementsByClassName("tab");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+
+  //generate preview for title
+  let title = document.getElementById("titleForm");
+  document.querySelector('.postTitle').textContent = title.value;
+  //generate preview for content
+  let content = document.getElementById("contentForm");
+  document.querySelector('.post-content p').textContent = content.value;
+  //generate preview for gif
+  let gifLink = document.querySelector("#form h1");
+  let image = document.querySelector('.post-content img')
+  console.log(gifLink.textContent);
+  image.src = gifLink.textContent;
+
+  document.getElementById(tabName).style.display = "block";  
+}
+
 // search for a gif
 document.getElementById("gifButton").addEventListener("click", ev => {
     ev.preventDefault(); //to stop the page reload
@@ -17,9 +40,11 @@ document.getElementById("gifButton").addEventListener("click", ev => {
         let fig = document.createElement("figure");
         let img = document.createElement("img");
         let fc = document.createElement("figcaption");
+        let gifLink = document.querySelector("#form h1")
         img.src = content.data[0].images.downsized.url;
         img.alt = content.data[0].title;
-        fc.textContent = content.data[0].images.downsized.url;
+        fc.textContent = content.data[0].title;
+        gifLink.textContent = content.data[0].images.downsized.url
         fig.appendChild(img);
         fig.appendChild(fc);
         let out = document.querySelector(".out");
@@ -38,7 +63,7 @@ form.addEventListener('submit', submitPost);
 
 function submitPost(e){
     e.preventDefault();
-    let gifURL = document.querySelector("figcaption").innerText
+    let gifURL = document.querySelector("#form h1").textContent;
 
     const postData = {
         title: e.target.titleForm.value,

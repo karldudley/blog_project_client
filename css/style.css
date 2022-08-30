@@ -1,33 +1,46 @@
 /* ------ Variables ----- */
+
 :root {
     --dark: #388659;
     --light: #9be564;
     --culture: #f0edee;
-  }
+}
 
-/* ------ Fonts ----- */
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Saira+Condensed:wght@300&display=swap');
+/* Fonts/Imported assets */
 
 @font-face {
     font-family: 'Playfair';
-    src: URL('./images/PlayfairDisplay-Bold.otf') format('truetype');
-  }
-
-/* font-family: 'Lobster', cursive;
-font-family: 'Saira Condensed', sans-serif; */
-
-/* ------ Body ----- */
-body {
-    background-color: rgb(10, 212, 94);
-    height: 100%;
+    src: URL('./assets/PlayfairDisplay-Bold.otf') format('truetype');
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Saira+Condensed:wght@300&display=swap');
+
+
+/* Styling elements that will remain consistent for all pages. */
+
+/* Header */
+
 h1 {
     font-family: Playfair;
     padding-top: 10px;
     font-size: 80px;
     text-align: center;
 }
-/* ------ Nav ----- */
+
+h3 {
+    margin: 20px;
+    text-align: center;
+}
+
+/* Body */
+
+body {
+    background-color: rgb(10, 212, 94);
+    height: 100%;
+}
+
+/* Nav bar */
+
 .logo {
     margin-left: 20px;
 }
@@ -46,11 +59,78 @@ h1 {
     font-size: 18px;
     margin-left: 30px;
 }
-h3 {
-    margin: 20px;
+
+/* Footer */
+
+footer {
     text-align: center;
+    margin: 0 auto;
 }
-/* ------ Main ----- */
+
+
+/* Styling for the landing/home page. */
+
+
+/* Styling for the post wall page. */
+
+.posts {
+    margin: 60px;
+    display: grid;
+    grid-template-columns: 40rem 650px;
+    align-items: center;
+    justify-content: space-evenly;
+    grid-row: auto auto;
+    grid-row-gap: 50px;
+}
+
+.post {
+    width: 40rem;
+}
+
+.post-header {
+    background-color: rgba(211, 211, 211, 0.315);
+}
+
+.postTitle {
+    margin: 10px;
+}
+
+.post-content {
+    height: 250px;
+    margin: 20px;
+}
+
+.author {
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+.post-footer {
+    height: 50px;
+    background-color: skyblue;
+    display: flex;
+}
+
+.post-footer p {
+    font-weight: bold;
+    margin: 12px;
+}
+
+.comments {
+    margin-right: 50px;
+}
+
+.post-buttons {
+    display: block;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+
+
+/* Styling for the post submission page. */
+
 article {
     background-color: #F0EDEE;
     padding: 20px;
@@ -152,4 +232,9 @@ article {
 
 #submitForm:hover {
     background-color: var(--light);
+}
+
+.post-content img {
+    max-width: auto;
+    max-height: 150px;
 }
