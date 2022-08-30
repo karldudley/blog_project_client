@@ -80,7 +80,7 @@ function submitPost(e){
         }
     };
 
-    fetch('http://localhost:3000/posts', options)
+    fetch('https://granny-smith-server.herokuapp.com/posts', options)
         .then(r => r.json())
         // .then(appendPost)
         .catch(console.warn)

@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: 'Playfair';
-    src: URL('./assets/PlayfairDisplay-Bold.otf') format('truetype');
+    src: URL('../assets/PlayfairDisplay-Bold.otf') format('truetype');
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Saira+Condensed:wght@300&display=swap');
