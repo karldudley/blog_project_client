@@ -23,7 +23,7 @@ document.getElementById("gifButton").addEventListener("click", ev => {
         fig.appendChild(img);
         fig.appendChild(fc);
         let out = document.querySelector(".out");
-        out.innerHTML = "";
+        out.textContent = "";
         out.insertAdjacentElement("afterbegin", fig);
         document.querySelector("#gifForm").value = "";
       })
