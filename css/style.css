@@ -43,6 +43,7 @@ body {
 
 .logo {
     margin-left: 20px;
+    min-height: 50px;
 }
 
 .navbar-custom {
@@ -56,7 +57,7 @@ body {
 
 .navbar-nav li {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 22px;
     margin-left: 30px;
 }
 
@@ -64,11 +65,76 @@ body {
 
 footer {
     text-align: center;
-    margin: 0 auto;
+    margin: 10px;
+}
+
+footer img {
+    opacity: 0.8;
+}
+
+.copyright {
+    margin: 10px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.name {
+    margin: 5px;
+    font-size: 14px;
+    opacity: 0.8;
 }
 
 
 /* Styling for the landing/home page. */
+
+.main {
+    margin: 4rem 6rem;
+    border: 2px solid rgba(255, 255, 255, 0.685);
+    border-radius: 4px;
+}
+
+.main p{
+    text-align: center;
+}
+
+hr {
+    border-top: 1px solid white;
+}
+
+.content {
+    display: flex;
+}
+
+.caption {
+    text-align: justify;
+    width: 750px;
+}
+
+.img-with-text img {
+    display: block;
+    margin: 0px auto;
+}
+
+#caption {
+    font-size: 16px;
+    font-style: italic;
+}
+
+.content img {
+    margin: 10px 4rem 2rem;
+    max-height: 500px;
+}
+
+.content p {
+    font-size: 20px;
+    margin: 30px;
+}
+
+.description {
+    flex-direction: column;
+    margin: 50px;
+}
+
 
 
 /* Styling for the post wall page. */
