@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: 'Playfair';
-    src: URL('./assets/PlayfairDisplay-Bold.otf') format('truetype');
+    src: URL('../assets/PlayfairDisplay-Bold.otf') format('truetype');
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Saira+Condensed:wght@300&display=swap');
@@ -179,6 +179,8 @@ hr {
 
 .post-footer p {
     font-weight: bold;
+    color: rgba(0, 0, 255, 0.671);
+    text-decoration: underline;
     margin: 12px;
 }
 
@@ -193,6 +195,15 @@ hr {
     margin-right: 10px;
 }
 
+.commentBox {
+    height: 120px;
+    margin: 20px;
+}
+
+.newComment {
+    margin: 10px;
+    width: 95%;
+}
 
 
 /* Styling for the post submission page. */
@@ -202,7 +213,7 @@ article {
     padding: 20px;
     margin: auto;
     margin-top: 30px;
-    width: 80%;
+    width: 60%;
     border-radius: 10px;
 }
 
@@ -216,7 +227,7 @@ article {
 }
 
 #form {
-    width: 80%;
+    width: 50%;
     margin: auto;
     font-size: 30px;
     font-family: 'Saira Condensed', sans-serif;
