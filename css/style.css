@@ -299,3 +299,8 @@ article {
 #submitForm:hover {
     background-color: var(--light);
 }
+
+.post-content img {
+    max-width: auto;
+    max-height: 150px;
+}
