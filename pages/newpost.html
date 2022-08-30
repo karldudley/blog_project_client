@@ -33,11 +33,6 @@
     </header>
     <h3>New Post</h3>
     <article>
-
-        <div class="w3-bar w3-black">
-            <button class="w3-bar-item w3-button" onclick="openTab('write')">Write</button>
-            <button class="w3-bar-item w3-button" onclick="openTab('preview')">Preview</button>
-        </div>
           
         <div id="write" class="w3-container tab w3-animate-left">
             <form id="form">
@@ -59,10 +54,7 @@
                 <h1 style="display:none"></h1>
                 <div class="out">
                     <!-- Where gif is generated -->
-                </div>
-            
-            <button onclick="openTab('preview')">Preview</button>                
-
+                </div>            
         </div>
           
         <div id="preview" class="w3-container tab w3-animate-right" style="display:none">
@@ -79,7 +71,12 @@
                 </div>
             </div>
             <input type="submit" id="submitForm" value="Create Post">
-            </form>
+                </form>
+        </div>
+
+        <div class="w3-bar w3-black">
+            <button class="w3-bar-item w3-button" onclick="openTab('write')">Write</button>
+            <button class="w3-bar-item w3-button" onclick="openTab('preview')">Preview</button>
         </div>
           
     </article>
