@@ -254,6 +254,12 @@ hr {
     transform: scale(1.5);
 }
 
+.disabled {
+    transform: 1s;
+    transform: scale(1.5);
+    filter: grayscale(1);
+}
+
 .commentBox {
     overflow-x: hidden;
     overflow-y: scroll;

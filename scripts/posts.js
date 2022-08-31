@@ -71,16 +71,16 @@ function loadPosts() {
                 likeButton.appendChild(likeCounter);
                 likeButton.appendChild(thumbsUp);
                 postButtons.appendChild(likeButton);
-                thumbsUp.addEventListener('click', sendEmoji.bind(this, post.id, 'up', likeCounter));
+                thumbsUp.addEventListener('click', sendEmoji.bind(this, post.id, 'up', likeCounter, thumbsUp), );
 
                 dislikeButton.appendChild(dislikeCounter);
                 dislikeButton.appendChild(thumbsDown);
                 likeButton.insertAdjacentElement('afterend', dislikeButton);
-                thumbsDown.addEventListener('click', sendEmoji.bind(this, post.id, 'down', dislikeCounter));
+                thumbsDown.addEventListener('click', sendEmoji.bind(this, post.id, 'down', dislikeCounter, thumbsDown));
 
                 favButton.appendChild(favCounter);
                 favButton.appendChild(fire);
-                fire.addEventListener('click', sendEmoji.bind(this, post.id, 'favourite', favCounter));
+                fire.addEventListener('click', sendEmoji.bind(this, post.id, 'favourite', favCounter, fire));
 
                 dislikeButton.insertAdjacentElement('afterend', favButton);
                 postFooter.appendChild(postButtons);
@@ -153,16 +153,23 @@ function sendComment(id, input) {
     })
 }
 
-function sendEmoji(id, emojiId, counter) {
-    const settings = {
-        method: 'POST'
+function sendEmoji(id, emojiId, counter, button) {
+    if (!button.classList.contains('disabled')) {
+        const settings = {
+            method: 'POST'
+        }
+        fetch(`https://granny-smith-server.herokuapp.com/posts/${id}/emojis/${emojiId}`, settings)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        counter.textContent = parseInt(counter.innerHTML) + 1;
+        button.classList.add('disabled');
     }
-    fetch(`https://granny-smith-server.herokuapp.com/posts/${id}/emojis/${emojiId}`, settings)
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-    })
-    counter.textContent = parseInt(counter.innerHTML) + 1;
+    else {
+        button.classList.remove('disabled');
+        counter.textContent = parseInt(counter.innerHTML) - 1;
+    }
 }
 
 function sendDelete(id) {
