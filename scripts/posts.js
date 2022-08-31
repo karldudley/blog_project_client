@@ -178,6 +178,8 @@ function sendDelete(id) {
     }
     fetch(`https://granny-smith-server.herokuapp.com/posts/${id}`, settings)
     .then(data => {
-        console.log("Data deleted", data);
+        console.log("Data deleted", id);
+        //refresh page after delete
+        window.location.href = "./posts.html";
     })
 }
