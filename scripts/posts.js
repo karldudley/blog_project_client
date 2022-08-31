@@ -63,11 +63,12 @@ function loadPosts() {
                 fire.textContent = '🔥';
                 likeButton.appendChild(likeCounter);
                 likeButton.appendChild(thumbsUp);
-            
                 postButtons.appendChild(likeButton);
+
                 dislikeButton.appendChild(dislikeCounter);
                 dislikeButton.appendChild(thumbsDown);
                 likeButton.insertAdjacentElement('afterend', dislikeButton);
+                
                 favButton.appendChild(favCounter);
                 favButton.appendChild(fire);
                 dislikeButton.insertAdjacentElement('afterend', favButton);
