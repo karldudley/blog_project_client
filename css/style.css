@@ -168,8 +168,21 @@ hr {
 }
 
 .post-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     height: 250px;
     margin: 20px;
+}
+
+.post-content img {
+    height: 220px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+}
+
+.post-content p {
+    word-wrap: normal;
 }
 
 .author {

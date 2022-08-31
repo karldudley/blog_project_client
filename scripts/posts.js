@@ -32,6 +32,14 @@ function loadPosts() {
                 const postText = document.createElement('p');
                 postContent.appendChild(postText);
                 postText.textContent = post.content;
+
+                if (post.gif) {
+                    const postGif = document.createElement('img');
+                    postGif.src = post.gif;
+                    postContent.appendChild(postGif);
+                }
+                
+
                 postHeader.insertAdjacentElement('afterend', postContent);
                 const postFooter = document.createElement('div');
                 postFooter.className = 'post-footer';
@@ -87,4 +95,3 @@ function openComments(number) {
         }
     }
 }
-
