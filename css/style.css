@@ -163,6 +163,10 @@ hr {
     background-color: rgba(211, 211, 211, 0.315);
 }
 
+.post-header h4 {
+    margin: 10px;
+}
+
 .postTitle {
     margin: 10px;
 }
@@ -184,6 +188,7 @@ hr {
 
 .post-content p {
     word-wrap: normal;
+    margin: 5px;
 }
 
 .author {
@@ -200,13 +205,14 @@ hr {
 .post-footer p {
     cursor: pointer;
     font-weight: bold;
-    color: rgba(0, 0, 255, 0.671);
-    text-decoration: underline;
+    color: rgba(0, 0, 255, 0.623);
+    text-decoration-line: underline;
     margin: 12px;
+    margin-left: 20px;
 }
 
-.comments {
-    margin-right: 50px;
+.comments:hover {
+    color: rgba(0, 0, 255, 0.959);
 }
 
 .post-buttons {
@@ -220,7 +226,20 @@ hr {
     overflow-x: hidden;
     overflow-y: scroll;
     height: 120px;
-    margin: 20px;
+    margin: 10px;
+    background-color: rgba(179, 175, 175, 0.158);
+    border-radius: 5px;
+}
+
+.commentBox p {
+    padding-top: 10px;
+    padding-left: 20px;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+}
+
+.commentBox p:hover {
+    background-color: rgba(179, 175, 175, 0.582);
 }
 
 .newComment {

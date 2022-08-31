@@ -60,7 +60,6 @@ function loadPosts() {
                 const commentDiv = document.createElement('div');
                 commentDiv.className = 'comments-section'; 
                 postFooter.insertAdjacentElement('afterend', commentDiv);
-                console.log(postSelector);
             })
             const commentBoxes = document.getElementsByClassName('comments');
             for (let i = 0; i < commentBoxes.length; i++) {
@@ -74,7 +73,7 @@ function openComments(id, post) {
     const comments = document.createElement('div');
     const addComment = document.createElement('input');
     let comment;
-    console.log(post.comments);
+    let commentCount;
     addComment.addEventListener('keypress', (event) => {
         var key = event.key;
         if (key === 'Enter' && addComment.value !== '') {
@@ -87,9 +86,11 @@ function openComments(id, post) {
         }
     });
     for (let commentData of post.comments) {
+        commentCount += 1;
         comment = document.createElement('p');
         commentData.comment ? comment.innerText = commentData.comment : comment.innerText = commentData;
         comments.prepend(comment);
+        console.log(commentCount);
     };
     addComment.type = "text";
     addComment.className = "newComment";
