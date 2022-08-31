@@ -73,12 +73,13 @@ function openComments(id, post) {
     }
     addComment.addEventListener('keypress', (event) => {
         var key = event.key;
-        if (key === 'Enter') {
+        if (key === 'Enter' && addComment.value !== '') {
             (post.comments).push(addComment.value);
             comment = document.createElement('p');
             comment.innerText = addComment.value;
             comments.prepend(comment);
             sendComment(post.id, addComment.value);
+            event.currentTarget.value = '';
         }
     });
     console.log(post.comments);
