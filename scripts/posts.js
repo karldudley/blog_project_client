@@ -1,5 +1,9 @@
 loadPosts();
+const commentBoxes = document.getElementsByClassName('comments');
+const commentSection = document.getElementsByClassName('comments-section');
+
 for (let i = 0; i < commentBoxes.length; i++) {
+    console.log(i);
     commentBoxes[i].addEventListener('click', openComments.bind(this, i));
 }
 
@@ -56,15 +60,15 @@ function loadPosts() {
                 commentDiv.className = 'comments-section'; 
                 postFooter.insertAdjacentElement('afterend', commentDiv);
                 console.log(postSelector);
-
             })
+            const commentBoxes = document.getElementsByClassName('comments');
+            const commentSection = document.getElementsByClassName('comments-section');
+            for (let i = 0; i < commentBoxes.length; i++) {
+                console.log(i);
+                commentBoxes[i].addEventListener('click', openComments.bind(this, i));
+            }
         });
 }
-
-const commentBoxes = document.getElementsByClassName('comments');
-const commentSection = document.getElementsByClassName('comments-section');
-
-console.log(commentSection);
 
 function openComments(number) {
     /*for (let comment of comments){
