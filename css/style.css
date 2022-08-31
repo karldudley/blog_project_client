@@ -168,8 +168,22 @@ hr {
 }
 
 .post-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     height: 250px;
-    margin: 20px;
+    margin: 5px;
+    grid-gap: 10px;
+}
+
+.post-content img {
+    height: 220px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+}
+
+.post-content p {
+    word-wrap: normal;
 }
 
 .author {
@@ -269,8 +283,6 @@ textarea::-webkit-scrollbar {
     grid-column: 3 / 5;
 }
 #C {
-    word-wrap:break-word;
-    word-break: break-all;
     grid-column: 1 / 3;
     grid-row: 2 / 4;
 }
@@ -307,6 +319,7 @@ form .button input:hover {
     cursor: pointer;
 }
 
+/* Media Queries */
 
 @media (max-width: 584px) {
     .container {
@@ -324,112 +337,3 @@ form .button input:hover {
         width: 0;
     }
 }
-
-/* 
-article {
-    background-color: #F0EDEE;
-    padding: 20px;
-    margin: auto;
-    margin-top: 30px;
-    width: 60%;
-    border-radius: 10px;
-}
-
-.topTitles {
-    font-family: 'Lobster', cursive;
-    font-weight: 100;
-    font-size: 60px;
-    text-align: center;
-    color: rgb(66, 62, 62);
-    padding: 30px;
-}
-
-#form {
-    width: 50%;
-    margin: auto;
-    font-size: 30px;
-    font-family: 'Saira Condensed', sans-serif;
-    letter-spacing: 0.1em;
-    padding-bottom: 150px;
-}
-
-#titleForm {
-    width: 100%;
-    height: 30px;
-    font-family: 'Saira Condensed', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    margin-top: 20px;
-}
-
-#titleCount {
-    padding-bottom: 60px;
-    background-color: #ebdbc300;
-}
-
-#descriptionForm {
-    width: 100%;
-    height: 100px;
-    resize: none;
-    font-family: 'Saira Condensed', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    margin-top: 20px;
-}
-
-#descriptionCount {
-    padding-bottom: 60px;
-    background-color: #ebdbc300;
-}
-
-#titleCount,
-#descriptionCount,
-#contentCount {
-    text-align: center;
-}
-
-#contentForm {
-    width: 100%;
-    height: 200px;
-    resize: none;
-    font-family: 'Saira Condensed', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    margin-top: 20px;
-}
-
-#contentCount {
-    padding-bottom: 60px;
-    background-color: #ebdbc300;
-}
-
-#gifForm {
-    width: 100%;
-    height: 30px;
-    font-family: 'Saira Condensed', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    margin-top: 20px;
-}
-
-#submitForm {
-    background-color: var(--dark);
-    color: white;
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 16px;
-    margin: 2px 2px;
-    font-family: 'Saira Condensed', sans-serif;
-    margin-top: 20px;
-}
-
-#submitForm:hover {
-    background-color: var(--light);
-}
-
-.post-content img {
-    max-width: auto;
-    max-height: 150px;
-} */
