@@ -222,6 +222,13 @@ hr {
     margin-right: 10px;
 }
 
+.post-buttons button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    margin-left: 40px;
+}
+
 .commentBox {
     overflow-x: hidden;
     overflow-y: scroll;
