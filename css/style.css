@@ -234,6 +234,10 @@ hr {
     margin-right: 10px;
 }
 
+.post-buttons span {
+    font-weight: bold;
+}
+
 .post-buttons div {
     margin-left: 50px;
 }
