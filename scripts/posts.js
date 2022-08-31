@@ -46,15 +46,31 @@ function loadPosts() {
                 postFooter.appendChild(postComments);
                 const postButtons = document.createElement('div');
                 postButtons.className = 'post-buttons';
+                const likeButton = document.createElement('div');
+                const likeCounter = document.createElement('span');
+                likeCounter.textContent = (post.emojis[0])['up'];
                 const thumbsUp = document.createElement('button');
                 thumbsUp.textContent = '👍';
+                const dislikeButton = document.createElement('div');
+                const dislikeCounter = document.createElement('span');
+                dislikeCounter.textContent = (post.emojis[0])['down'];
                 const thumbsDown = document.createElement('button');
-                thumbsDown.textContent = '👎'
+                thumbsDown.textContent = '👎';
+                const favButton = document.createElement('div');
+                const favCounter = document.createElement('span');
+                favCounter.textContent = (post.emojis[0])['favourite'];
                 const fire = document.createElement('button');
                 fire.textContent = '🔥';
-                postButtons.appendChild(thumbsUp);
-                postButtons.appendChild(thumbsDown);
-                postButtons.appendChild(fire);
+                likeButton.appendChild(likeCounter);
+                likeButton.appendChild(thumbsUp);
+            
+                postButtons.appendChild(likeButton);
+                dislikeButton.appendChild(dislikeCounter);
+                dislikeButton.appendChild(thumbsDown);
+                likeButton.insertAdjacentElement('afterend', dislikeButton);
+                favButton.appendChild(favCounter);
+                favButton.appendChild(fire);
+                dislikeButton.insertAdjacentElement('afterend', favButton);
                 postFooter.appendChild(postButtons);
                 postContent.insertAdjacentElement('afterend', postFooter);
                 const commentDiv = document.createElement('div');

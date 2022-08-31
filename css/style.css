@@ -216,17 +216,21 @@ hr {
 }
 
 .post-buttons {
-    display: block;
+    display: flex;
     margin-left: auto;
     margin-top: 10px;
     margin-right: 10px;
+}
+
+.post-buttons div {
+    margin-left: 50px;
 }
 
 .post-buttons button {
     background-color: transparent;
     border: none;
     font-size: 20px;
-    margin-left: 40px;
+    margin-left: 5px;
 }
 
 .post-buttons button:hover {
