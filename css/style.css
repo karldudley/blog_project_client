@@ -171,7 +171,8 @@ hr {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 250px;
-    margin: 20px;
+    margin: 5px;
+    grid-gap: 10px;
 }
 
 .post-content img {
@@ -280,8 +281,6 @@ textarea::-webkit-scrollbar {
     grid-column: 3 / 5;
 }
 #C {
-    word-wrap:break-word;
-    word-break: break-all;
     grid-column: 1 / 3;
     grid-row: 2 / 4;
 }
