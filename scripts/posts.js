@@ -1,11 +1,4 @@
 loadPosts();
-const commentBoxes = document.getElementsByClassName('comments');
-const commentSection = document.getElementsByClassName('comments-section');
-
-for (let i = 0; i < commentBoxes.length; i++) {
-    console.log(i);
-    commentBoxes[i].addEventListener('click', openComments.bind(this, i));
-}
 
 function loadPosts() {
     fetch('https://granny-smith-server.herokuapp.com/posts')
@@ -70,28 +63,41 @@ function loadPosts() {
                 console.log(postSelector);
             })
             const commentBoxes = document.getElementsByClassName('comments');
-            const commentSection = document.getElementsByClassName('comments-section');
             for (let i = 0; i < commentBoxes.length; i++) {
-                console.log(i);
-                commentBoxes[i].addEventListener('click', openComments.bind(this, i));
+                commentBoxes[i].addEventListener('click', openComments.bind(this, i, postData[i]));
             }
         });
 }
 
-function openComments(number) {
-    /*for (let comment of comments){
-
-    }*/
-    const comment = document.createElement('p');
+function openComments(id, post) {
+    const commentSection = document.getElementsByClassName('comments-section');
+    const comments = document.createElement('div');
     const addComment = document.createElement('input');
+    let comment;
+    for (let commentData of post.comments) {
+        comment = document.createElement('p');
+        comment.innerText = commentData.comment;
+        comments.prepend(comment);
+    }
+    addComment.addEventListener('keypress', (event) => {
+        var key = event.key;
+        if (key === 'Enter' && addComment.value !== '') {
+            (post.comments).push(addComment.value);
+            comment = document.createElement('p');
+            comment.innerText = addComment.value;
+            comments.prepend(comment);
+            sendComment(post.id, addComment.value);
+            event.currentTarget.value = '';
+        }
+    });
+    console.log(post.comments);
     addComment.type = "text";
     addComment.className = "newComment";
     addComment.placeholder = "Add your own comment here!";
-    comment.className = "commentBox";
-    comment.innerText = 'Hello I am open';
+    comments.className = "commentBox";
     for (let j = 0; j <= commentSection.length; j++) {
-        if (number === j && commentSection[j].innerHTML.trim() === '') {
-            commentSection[j].appendChild(comment);
+        if (id === j && commentSection[j].innerHTML.trim() === '') {
+            commentSection[j].appendChild(comments);
             commentSection[j].appendChild(addComment);
         }
         else {
@@ -99,3 +105,22 @@ function openComments(number) {
         }
     }
 }
+
+function sendComment(id, input) {
+    const commentJSON = {
+        comment: input
+    };
+    const settings = {
+        method: 'POST',
+        body: JSON.stringify(commentJSON),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }
+    fetch(`https://granny-smith-server.herokuapp.com/posts/${id}/comments`, settings)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+}
+
