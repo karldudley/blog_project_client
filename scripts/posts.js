@@ -11,7 +11,6 @@ function loadPosts() {
         })
         .then (data => {
             let postData = data.posts;
-            console.log(postData);
             const postSelector = document.querySelector('.posts');
             postData.reverse().forEach(post => {
                 const postCard = document.createElement('div');
@@ -27,7 +26,7 @@ function loadPosts() {
                 const close = document.createElement('span');
                 close.className = "close-btn";
                 close.textContent = 'X';
-                close.addEventListener('click', sendDelete.bind(this, post.id));
+                close.addEventListener('click', sendDelete.bind(this, post.id, data.posts.length));
 
                 postHeader.appendChild(close);
                 postCard.appendChild(postHeader);
@@ -172,14 +171,20 @@ function sendEmoji(id, emojiId, counter, button) {
     }
 }
 
-function sendDelete(id) {
-    const settings = {
-        method: 'DELETE'
+function sendDelete(id, length) {
+    if (length > 1) {
+        var answer = window.confirm("Are you sure you want to delete this story?");
+        if (answer) {
+            const settings = {
+                method: 'DELETE'
+            }
+            fetch(`https://granny-smith-server.herokuapp.com/posts/${id}`, settings)
+            .then(data => {
+                //refresh page after delete
+                window.location.href = "./posts.html";
+            })
+        }
+    } else {
+        alert("We need to keep at least one post or else there will be nothing to read!");
     }
-    fetch(`https://granny-smith-server.herokuapp.com/posts/${id}`, settings)
-    .then(data => {
-        console.log("Data deleted", id);
-        //refresh page after delete
-        window.location.href = "./posts.html";
-    })
 }
