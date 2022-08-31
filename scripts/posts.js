@@ -16,7 +16,7 @@ function loadPosts() {
             let postData = data.posts;
             console.log(postData);
             const postSelector = document.querySelector('.posts');
-            postData.forEach(post => {
+            postData.reverse().forEach(post => {
                 const postCard = document.createElement('div');
                 postCard.className = 'shadow card post';
                 postSelector.appendChild(postCard);
