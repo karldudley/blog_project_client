@@ -20,9 +20,13 @@ function loadPosts() {
                 const postHeader = document.createElement('div');
                 postHeader.className = 'post-header';
                 const postTitle = document.createElement('h4');
-                postTitle.class = 'postTitle';
+                postTitle.className = 'postTitle';
                 postTitle.textContent = post.title + " | " + post.description;
                 postHeader.appendChild(postTitle);
+                const close = document.createElement('span');
+                close.className = "close-btn";
+                close.textContent = 'X';
+                postHeader.appendChild(close);
                 postCard.appendChild(postHeader);
                 const postContent = document.createElement('div');
                 postContent.className = 'post-content';
@@ -159,3 +163,15 @@ function sendEmoji(id, emojiId, counter) {
     counter.textContent = parseInt(counter.innerHTML) + 1;
 }
 
+//close button
+// const closeBtn = document.querySelector('closeBtn');
+
+// closeBtn.addEventListener('click', () => {
+//     console.log("Close button clicked")
+//   });
+
+document.addEventListener('click',function(e){
+    if(e.target && e.target.className == 'close-btn'){
+        console.log("Close button clicked")
+    }
+});
