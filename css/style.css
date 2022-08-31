@@ -229,6 +229,11 @@ hr {
     margin-left: 40px;
 }
 
+.post-buttons button:hover {
+    transition: transform 1s;
+    transform: scale(1.5);
+}
+
 .commentBox {
     overflow-x: hidden;
     overflow-y: scroll;
