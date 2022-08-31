@@ -66,11 +66,7 @@ function openComments(id, post) {
     const comments = document.createElement('div');
     const addComment = document.createElement('input');
     let comment;
-    for (let commentData of post.comments) {
-        comment = document.createElement('p');
-        comment.innerText = commentData.comment;
-        comments.prepend(comment);
-    }
+    console.log(post.comments);
     addComment.addEventListener('keypress', (event) => {
         var key = event.key;
         if (key === 'Enter' && addComment.value !== '') {
@@ -82,7 +78,11 @@ function openComments(id, post) {
             event.currentTarget.value = '';
         }
     });
-    console.log(post.comments);
+    for (let commentData of post.comments) {
+        comment = document.createElement('p');
+        commentData.comment ? comment.innerText = commentData.comment : comment.innerText = commentData;
+        comments.prepend(comment);
+    };
     addComment.type = "text";
     addComment.className = "newComment";
     addComment.placeholder = "Add your own comment here!";
