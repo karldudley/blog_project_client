@@ -161,6 +161,8 @@ hr {
 
 .post-header {
     background-color: rgba(211, 211, 211, 0.315);
+    display: grid;
+    grid-template-columns: 29fr 1fr;
 }
 
 .post-header h4 {
@@ -168,7 +170,17 @@ hr {
 }
 
 .postTitle {
-    margin: 10px;
+    margin: 5px;
+}
+.close-btn {
+    font-size: 1.5rem;
+    z-index: 1;
+}
+  
+.close-btn:hover {
+    cursor: pointer;
+    color: red;
+    transition: 0.2s ease-out;
 }
 
 .post-content {
