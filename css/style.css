@@ -184,6 +184,7 @@ hr {
 }
 
 .post-footer p {
+    cursor: pointer;
     font-weight: bold;
     color: rgba(0, 0, 255, 0.671);
     text-decoration: underline;
