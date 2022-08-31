@@ -28,7 +28,7 @@ function loadPosts() {
                 postHeader.className = 'post-header';
                 const postTitle = document.createElement('h4');
                 postTitle.class = 'postTitle';
-                postTitle.textContent = post.title;
+                postTitle.textContent = post.title + " | " + post.description;
                 postHeader.appendChild(postTitle);
                 postCard.appendChild(postHeader);
                 const postContent = document.createElement('div');
@@ -37,7 +37,7 @@ function loadPosts() {
                 postContent.appendChild(postText);
                 postText.textContent = post.content;
 
-                if (post.gif) {
+                if (post.gif.search("http") != -1) {
                     const postGif = document.createElement('img');
                     postGif.src = post.gif;
                     postContent.appendChild(postGif);
