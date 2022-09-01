@@ -141,7 +141,6 @@ hr {
 
 .img-with-text img {
     display: block;
-    width: auto;
     margin: 0px auto;
     margin: 10px 4rem 2rem;
     max-height: 500px;
@@ -418,6 +417,34 @@ form .button input:hover {
 }
 
 /* Media Queries */
+
+@media (max-width: 1230px) {
+    .content {
+        flex-wrap: wrap;
+    }
+
+    .img-with-text {
+        width: 100%;
+    }
+
+    .img-with-text img {
+        display: flex;
+    }
+}
+
+@media (max-width: 960px) {
+    .img-with-text img {
+        width: 90%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 390px) {
+    div.description {
+        margin: 0;
+    }
+}
+
 @media (max-width: 950px) {
     .posts {
         grid-template-columns: 1fr;

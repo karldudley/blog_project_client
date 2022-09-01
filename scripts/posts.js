@@ -13,9 +13,13 @@ function loadPosts() {
             let postData = data.posts;
             const postSelector = document.querySelector('.posts');
             postData.reverse().forEach(post => {
+                
+                //Post base
                 const postCard = document.createElement('div');
                 postCard.className = 'shadow card post';
                 postSelector.appendChild(postCard);
+
+                //Post header
                 const postHeader = document.createElement('div');
                 postHeader.className = 'post-header';
                 const postTitle = document.createElement('h4');
@@ -29,23 +33,23 @@ function loadPosts() {
                 close.className = "close-btn";
                 close.textContent = 'X';
                 close.addEventListener('click', sendDelete.bind(this, post.id, data.posts.length));
-
                 postHeader.appendChild(close);
                 postCard.appendChild(postHeader);
+
+                //Post content
                 const postContent = document.createElement('div');
                 postContent.className = 'post-content';
                 const postText = document.createElement('p');
                 postContent.appendChild(postText);
                 postText.textContent = post.content;
-
                 if (post.gif.search("http") != -1) {
                     const postGif = document.createElement('img');
                     postGif.src = post.gif;
                     postContent.appendChild(postGif);
                 }
-                
-
                 postHeader.insertAdjacentElement('afterend', postContent);
+
+                //Post footer
                 const postFooter = document.createElement('div');
                 postFooter.className = 'post-footer';
                 const postComments = document.createElement('p');
@@ -54,42 +58,47 @@ function loadPosts() {
                 postFooter.appendChild(postComments);
                 const postButtons = document.createElement('div');
                 postButtons.className = 'post-buttons';
+                
+                //Like button
                 const likeButton = document.createElement('div');
                 const likeCounter = document.createElement('span');
                 likeCounter.textContent = (post.emojis[0])['up'];
                 const thumbsUp = document.createElement('button');
                 thumbsUp.textContent = '👍';
+                likeButton.appendChild(likeCounter);
+                likeButton.appendChild(thumbsUp);
+                postButtons.appendChild(likeButton);
+                thumbsUp.addEventListener('click', sendEmoji.bind(this, post.id, 'up', likeCounter, thumbsUp), );
+               
+                //Dislike button
                 const dislikeButton = document.createElement('div');
                 const dislikeCounter = document.createElement('span');
                 dislikeCounter.textContent = (post.emojis[0])['down'];
                 const thumbsDown = document.createElement('button');
                 thumbsDown.textContent = '👎';
+                dislikeButton.appendChild(dislikeCounter);
+                dislikeButton.appendChild(thumbsDown);
+                likeButton.insertAdjacentElement('afterend', dislikeButton);
+                thumbsDown.addEventListener('click', sendEmoji.bind(this, post.id, 'down', dislikeCounter, thumbsDown));
+                
+                //Fav button
                 const favButton = document.createElement('div');
                 const favCounter = document.createElement('span');
                 favCounter.textContent = (post.emojis[0])['favourite'];
                 const fire = document.createElement('button');
                 fire.textContent = '🔥';
-                likeButton.appendChild(likeCounter);
-                likeButton.appendChild(thumbsUp);
-                postButtons.appendChild(likeButton);
-                thumbsUp.addEventListener('click', sendEmoji.bind(this, post.id, 'up', likeCounter, thumbsUp), );
-
-                dislikeButton.appendChild(dislikeCounter);
-                dislikeButton.appendChild(thumbsDown);
-                likeButton.insertAdjacentElement('afterend', dislikeButton);
-                thumbsDown.addEventListener('click', sendEmoji.bind(this, post.id, 'down', dislikeCounter, thumbsDown));
-
                 favButton.appendChild(favCounter);
                 favButton.appendChild(fire);
                 fire.addEventListener('click', sendEmoji.bind(this, post.id, 'favourite', favCounter, fire));
-
                 dislikeButton.insertAdjacentElement('afterend', favButton);
+
                 postFooter.appendChild(postButtons);
                 postContent.insertAdjacentElement('afterend', postFooter);
+
+                //Comments section
                 const commentDiv = document.createElement('div');
                 commentDiv.className = 'comments-section'; 
                 postFooter.insertAdjacentElement('afterend', commentDiv);
-                console.log(postSelector);
             })
             const commentBoxes = document.getElementsByClassName('comments');
             for (let i = 0; i < commentBoxes.length; i++) {
@@ -104,7 +113,6 @@ function openComments(id, post) {
     const comments = document.createElement('div');
     const addComment = document.createElement('input');
     let comment;
-    console.log(post.comments);
     addComment.addEventListener('keypress', (event) => {
         var key = event.key;
         if (key === 'Enter' && addComment.value !== '') {
@@ -131,7 +139,11 @@ function openComments(id, post) {
             commentSection[j].appendChild(addComment);
         }
         else {
-            commentSection[j].innerHTML = '';
+            try {
+               commentSection[j].innerHTML = '';
+            } catch (e) {
+                continue;
+            }
         }
     }
 }
@@ -148,10 +160,7 @@ function sendComment(id, input) {
         }
     }
     fetch(`https://granny-smith-server.herokuapp.com/posts/${id}/comments`, settings)
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-    })
+    .then(response => response.json());
 }
 
 function sendEmoji(id, emojiId, counter, button) {
@@ -160,10 +169,6 @@ function sendEmoji(id, emojiId, counter, button) {
             method: 'POST'
         }
         fetch(`https://granny-smith-server.herokuapp.com/posts/${id}/emojis/${emojiId}`, settings)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-        })
         counter.textContent = parseInt(counter.innerHTML) + 1;
         button.classList.add('disabled');
     }
@@ -172,10 +177,6 @@ function sendEmoji(id, emojiId, counter, button) {
             method: 'DELETE'
         }
         fetch(`https://granny-smith-server.herokuapp.com/posts/${id}/emojis/${emojiId}`, settings)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-        })
         counter.textContent = parseInt(counter.innerHTML) - 1;
         button.classList.remove('disabled');
     }
