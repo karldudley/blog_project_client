@@ -15,23 +15,47 @@
     src: URL('../assets/PlayfairDisplay-Bold.otf') format('truetype');
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Saira+Condensed:wght@300&display=swap');
+@font-face {
+    font-family: 'Arizonia';
+    src: URL('../assets/Arizonia-Regular.ttf') format('truetype');
+}
 
+.bold {
+    font-weight: bold;
+}
+
+.italics {
+    font-style: italic;
+}
 
 /* Styling elements that will remain consistent for all pages. */
 
 /* Header */
 
 h1 {
-    font-family: Playfair;
+    font-family: 'Arizonia', cursive;
+    border-top: 2px solid rgba(0, 0, 0, 0.226);
     padding-top: 10px;
+    padding-bottom: 10px;
     font-size: 80px;
+    font-weight: bold;
     text-align: center;
 }
 
+a.nav-link {
+    color: rgb(1, 131, 29);
+}
+
 h3 {
+    font-family: Playfair;
     margin: 20px;
     text-align: center;
+}
+
+header h3 {
+    margin: 0 0 10px 0;
+    font-size: 34px;
+    letter-spacing: 0.01rem;
 }
 
 /* Body */
@@ -42,7 +66,7 @@ h3 {
 }
 
 body {
-    background-color: rgb(10, 212, 94);
+    background: rgba(45, 192, 45, 0.76);
     height: 100%;
 }
 
@@ -54,7 +78,8 @@ body {
 }
 
 .navbar-custom {
-    background-color: lightgreen;
+    background: rgb(94,242,148);
+    background: linear-gradient(90deg, rgba(94,242,148,0.9472163865546218) 0%, rgba(72,228,129,1) 52%, rgba(35,240,120,1) 100%);
 }
 
 
@@ -108,6 +133,10 @@ hr {
     border-top: 1px solid white;
 }
 
+#greenApples {
+    width: 100%;
+}
+
 .content {
     display: flex;
 }
@@ -119,17 +148,18 @@ hr {
 
 .img-with-text img {
     display: block;
+    width: auto;
     margin: 0px auto;
+    margin: 10px 4rem 2rem;
+    max-height: 500px;
+    border: 2px solid white;
+    border-radius: 50%;
 }
 
 #caption {
     font-size: 16px;
+    font-weight: bold;
     font-style: italic;
-}
-
-.content img {
-    margin: 10px 4rem 2rem;
-    max-height: 500px;
 }
 
 .content p {
@@ -147,26 +177,37 @@ hr {
 /* Styling for the post wall page. */
 
 .posts {
-    margin: 60px;
+    margin: 4rem;
+    margin-left: 200px;
     display: grid;
-    grid-gap: 15px;
+    grid-gap: 0;
+    grid-row-gap: 30px;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-content: space-evenly;
 }
 
 .post {
-    width: 40rem;
+    width: 43rem;
 }
 
 .post-header {
     background-color: rgba(211, 211, 211, 0.315);
-    display: grid;
-    grid-template-columns: 29fr 1fr;
+    display: flex;
+    justify-content: space-between;
 }
 
 .post-header h4 {
     margin: 10px;
+    font-weight: bold;
+}
+
+h5 {
+    margin-top: 14px;
+    padding-right: 40%;
+    color: rgba(88, 88, 88, 0.911);
+    font-size: 20px;
+    opacity: 0.9;
 }
 
 .postTitle {
@@ -175,6 +216,8 @@ hr {
 .close-btn {
     font-size: 1.5rem;
     z-index: 1;
+    margin-top: 5px;
+    margin-right: 15px;
 }
   
 .close-btn:hover {
@@ -192,7 +235,7 @@ hr {
 }
 
 .post-content img {
-    height: 220px;
+    height: 250px;
     width: 100%;
     outline: none;
     border-radius: 5px;
@@ -374,6 +417,9 @@ form .button input {
 form .button input:hover {
     background: linear-gradient(-135deg, lightgreen, darkgreen);
     cursor: pointer;
+}
+#contentForm {
+    line-height: 40px;
 }
 
 /* Media Queries */

@@ -20,9 +20,11 @@ function loadPosts() {
                 postHeader.className = 'post-header';
                 const postTitle = document.createElement('h4');
                 postTitle.className = 'postTitle';
-                postTitle.textContent = post.title + " | " + post.description;
+                postTitle.textContent = post.title;
+                const postDescription = document.createElement('h5');
+                postDescription.textContent = post.description;
                 postHeader.appendChild(postTitle);
-
+                postHeader.appendChild(postDescription)
                 const close = document.createElement('span');
                 close.className = "close-btn";
                 close.textContent = 'X';
@@ -48,7 +50,7 @@ function loadPosts() {
                 postFooter.className = 'post-footer';
                 const postComments = document.createElement('p');
                 postComments.className = 'comments';
-                postComments.textContent = 'Comments';
+                postComments.textContent = 'See all comments';
                 postFooter.appendChild(postComments);
                 const postButtons = document.createElement('div');
                 postButtons.className = 'post-buttons';
@@ -166,8 +168,16 @@ function sendEmoji(id, emojiId, counter, button) {
         button.classList.add('disabled');
     }
     else {
-        button.classList.remove('disabled');
+        const settings = {
+            method: 'DELETE'
+        }
+        fetch(`https://granny-smith-server.herokuapp.com/posts/${id}/emojis/${emojiId}`, settings)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
         counter.textContent = parseInt(counter.innerHTML) - 1;
+        button.classList.remove('disabled');
     }
 }
 
