@@ -34,10 +34,6 @@ h1 {
     text-align: center;
 }
 
-a.nav-link {
-    font-family: 'Lato', sans-serif;
-    color: rgb(1, 131, 29);
-}
 
 h3 {
     font-family: Playfair;
@@ -59,25 +55,31 @@ header h3 {
 }
 
 body {
-    background: rgba(45, 192, 45, 0.76);
+    background-color:rgba(45, 192, 45, 0.76);
     height: 100%;
 }
 
 /* Nav bar */
 
 .logo {
-    margin-left: 20px;
-    min-height: 50px;
+    margin-left: 10px;
+    
 }
 
 .navbar-custom {
-    background: rgb(94,242,148);
-    background: linear-gradient(90deg, rgba(94,242,148,0.9472163865546218) 0%, rgba(72,228,129,1) 52%, rgba(35,240,120,1) 100%);
+    padding: 10px;
+    background: linear-gradient(90deg, rgba(141, 248, 180, 0.947) 0%, rgb(101, 245, 154) 52%, rgb(88, 247, 154) 100%);
+    opacity: 0.8;
 }
 
+.navbar-custom:hover {
+    background: linear-gradient(90deg, rgba(141, 248, 180, 0.947) 0%, rgb(101, 245, 154) 52%, rgb(88, 247, 154) 100%);
+    opacity: 1;
+}
 
-.nav-link {
-    color: darkgreen;
+a.nav-link {
+    font-family: 'Lato', sans-serif;
+    color: rgb(3, 126, 25);
 }
 
 .navbar-nav li {
