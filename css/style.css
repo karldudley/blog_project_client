@@ -199,6 +199,7 @@ hr {
 .postTitle {
     margin: 5px;
 }
+
 .close-btn {
     font-size: 1.5rem;
     z-index: 1;
@@ -228,6 +229,8 @@ hr {
 }
 
 .post-content p {
+    width: 100%;
+    word-break: break-word;
     word-wrap: normal;
     margin: 5px;
 }
