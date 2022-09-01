@@ -10,7 +10,7 @@ Or maybe you're on the run from police for a terrible crime you just committed a
 Post whatever you like anonymously for people around the world to see, free of judgement. (That could never go wrong right?)
 
 ## Project Description
-The aim of the project was to build a community journaling website that allows users to anonomously post and respond to stories.
+The aim of the project was to build a community journaling website that allows users to anonymously post and respond to stories.
 ## Table of contents
 1. [Installation](/README.md#installation)
 2. [Technologies](/README.md#technologies)
@@ -26,7 +26,7 @@ The aim of the project was to build a community journaling website that allows u
 ## Installation
 * Clone or download the [repo](https://github.com/karldudley/blog_project_client).
 * Within the terminal, navigate to the project folder.
-* Run ```npm install``` to install all required dependecies.
+* Run ```npm install``` to install all required dependencies.
 
 ### *To run locally:*
 
