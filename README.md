@@ -168,3 +168,5 @@ function findGif (ev) {
 ### [Matthew Blackman](https://github.com/ultimafinal1)
 ### [Camila Pessoa](https://github.com/Nevashka)
 ### [Karl Dudley](https://github.com/karldudley)
+
+#### Server side can be found [here](https://github.com/karldudley/blog_project_server/tree/staging)
