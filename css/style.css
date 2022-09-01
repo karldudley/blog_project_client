@@ -198,21 +198,23 @@ hr {
 }
 
 .post-header h4 {
+    overflow-wrap: break-word;
     margin: 10px;
     font-weight: bold;
 }
 
 h5 {
     margin-top: 14px;
-    padding-right: 40%;
     color: rgba(88, 88, 88, 0.911);
     font-size: 20px;
     opacity: 0.9;
+    overflow-wrap: break-word;
 }
 
 .postTitle {
     margin: 5px;
 }
+
 .close-btn {
     font-size: 1.5rem;
     z-index: 1;
@@ -242,6 +244,7 @@ h5 {
 }
 
 .post-content p {
+    overflow-wrap: break-word;
     word-wrap: normal;
     margin: 5px;
 }
