@@ -195,10 +195,11 @@ hr {
     background-color: rgba(211, 211, 211, 0.315);
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
 .post-header h4 {
-    overflow-wrap: break-word;
+    word-break: break-all;
     margin: 10px;
     font-weight: bold;
 }
@@ -208,7 +209,7 @@ h5 {
     color: rgba(88, 88, 88, 0.911);
     font-size: 20px;
     opacity: 0.9;
-    overflow-wrap: break-word;
+    word-break: break-all;
 }
 
 .postTitle {
@@ -244,7 +245,8 @@ h5 {
 }
 
 .post-content p {
-    overflow-wrap: break-word;
+    width: 100%;
+    word-break: break-all;
     word-wrap: normal;
     margin: 5px;
 }
