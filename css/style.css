@@ -43,7 +43,7 @@ h3 {
 }
 
 header h3 {
-    margin: 0 0 10px 0;
+    margin: 0 0 20px 0;
     font-size: 34px;
     letter-spacing: 0.01rem;
 }
@@ -87,7 +87,7 @@ body {
 
 footer {
     text-align: center;
-    margin: 10px;
+    margin: 30px 10px 10px 10px;
 }
 
 footer img {
