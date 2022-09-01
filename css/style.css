@@ -178,13 +178,11 @@ hr {
     display: grid;
     grid-template-columns: 30fr 30fr 2fr;
     height: 65px;
-    align-items: center;
-    padding-bottom: 5px;
+    overflow: hidden;
 }
 
 .post-header h4 {
     word-break: break-word;
-    margin: 10px;
     font-weight: bold;
 }
 
@@ -233,11 +231,6 @@ hr {
     word-break: break-word;
     word-wrap: normal;
     margin: 5px;
-}
-
-.author {
-    font-size: 14px;
-    opacity: 0.6;
 }
 
 .post-footer {
@@ -412,6 +405,21 @@ form .button input:hover {
 }
 
 /* Media Queries */
+@media (max-width: 950px) {
+    .posts {
+        grid-template-columns: 1fr;
+    }
+}
+@media (min-width: 1500px) {
+    .posts {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media (min-width: 2000px) {
+    .posts {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
 
 @media (max-width: 584px) {
     .container {
