@@ -1,13 +1,3 @@
-/* ------ Variables ----- */
-
-:root {
-    --dark: #388659;
-    --light: #9be564;
-    --culture: #f0edee;
-}
-
-
-
 /* Fonts/Imported assets */
 
 @font-face {
@@ -177,25 +167,19 @@ hr {
 /* Styling for the post wall page. */
 
 .posts {
-    margin: 4rem;
-    margin-left: 200px;
     display: grid;
-    grid-gap: 0;
-    grid-row-gap: 30px;
+    margin: 10px;
+    grid-gap: 10px;
     grid-template-columns: 1fr 1fr;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.post {
-    width: 43rem;
 }
 
 .post-header {
     background-color: rgba(211, 211, 211, 0.315);
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+    display: grid;
+    grid-template-columns: 30fr 30fr 2fr;
+    height: 65px;
+    align-items: center;
+    padding-bottom: 5px;
 }
 
 .post-header h4 {
@@ -204,7 +188,7 @@ hr {
     font-weight: bold;
 }
 
-h5 {
+.post-header h5 {
     margin-top: 14px;
     color: rgba(88, 88, 88, 0.911);
     font-size: 20px;
