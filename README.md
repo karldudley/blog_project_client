@@ -10,9 +10,10 @@ The aim of the project was to build a community journaling website that allows u
 4. [Process](/README.md#process)
 5. [Wins & Challenges](/README.md#wins--challenges)
 6. [Code Snippets](/README.md#code-snippets)
-7. [Future Features](/README.md#future-features)
-8. [License](/README.md#license)
-7. [Contributers](/README.md#contributers)
+7. [Testing](/README.md#testing)
+8. [Future Features](/README.md#future-features)
+9. [License](/README.md#license)
+10. [Contributers](/README.md#contributers)
 
 ## Installation
 * Clone or download the [repo](https://github.com/karldudley/blog_project_client).
@@ -156,6 +157,14 @@ function findGif (ev) {
   }
 }
 ```
+## Testing
+#### We used Jest and the Jest Environment JSDOM dependencies to test our client.
+### *Layout Testing*
+<img src="./assets/readme_images/layout_testing.png" alt="drawing" width="350"/>
+
+### *Function Testing*
+<img src="./assets/readme_images/function_testing.png" alt="drawing" width="350"/>
+
 ## Future Features
 - Ability to add ‘heat’ to the posts. We are already tracking thumbs up, down and favourites so we could use this data to order the posts based on which ones are the most popular and/or commented. This would help to drive engagement with the website as the ‘cream would rise to the top’.
 - Use of cookies to track what users have already viewed and reacted to. This would prevent them reacting more than once to individual posts.
