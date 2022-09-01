@@ -172,7 +172,7 @@ function findGif (ev) {
 ## License
 ## ![GitHub](https://img.shields.io/github/license/karldudley/blog_project_client?color=green&logo=Granny%20Smith%27s&style=plastic)
 
-## Contributers
+## Contributors
 
 ### [Matthew Blackman](https://github.com/ultimafinal1)
 ### [Camila Pessoa](https://github.com/Nevashka)
