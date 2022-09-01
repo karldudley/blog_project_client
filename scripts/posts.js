@@ -168,8 +168,16 @@ function sendEmoji(id, emojiId, counter, button) {
         button.classList.add('disabled');
     }
     else {
-        button.classList.remove('disabled');
+        const settings = {
+            method: 'DELETE'
+        }
+        fetch(`https://granny-smith-server.herokuapp.com/posts/${id}/emojis/${emojiId}`, settings)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
         counter.textContent = parseInt(counter.innerHTML) - 1;
+        button.classList.remove('disabled');
     }
 }
 
