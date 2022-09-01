@@ -10,6 +10,8 @@
     src: URL('../assets/Arizonia-Regular.ttf') format('truetype');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 .bold {
     font-weight: bold;
 }
@@ -33,6 +35,7 @@ h1 {
 }
 
 a.nav-link {
+    font-family: 'Lato', sans-serif;
     color: rgb(1, 131, 29);
 }
 
@@ -320,7 +323,9 @@ hr {
     width: 100%;
     margin-bottom: 50px;
     background: #F0EDEE;
+    font-size: 16px;
     padding: 25px 30px;
+    border: 1px solid black;
     border-radius: 5px;
 }
 .container form .story-details {
@@ -328,6 +333,12 @@ hr {
     grid-gap: 15px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
+form input:hover, form textarea:hover {
+   
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(10, 0, 0, 0.6);
+}
+
 form .story-details .input-box {
     margin-bottom: 15px;
 }
@@ -384,7 +395,7 @@ textarea::-webkit-scrollbar {
 }
 form .button {
     height: 45px;
-    margin: 45px 0;
+    margin: 20px 0;
 }
 form .button input {
     height: 100%;
