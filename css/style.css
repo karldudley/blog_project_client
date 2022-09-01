@@ -199,7 +199,7 @@ hr {
 }
 
 .post-header h4 {
-    word-break: break-all;
+    word-break: break-word;
     margin: 10px;
     font-weight: bold;
 }
@@ -209,7 +209,7 @@ h5 {
     color: rgba(88, 88, 88, 0.911);
     font-size: 20px;
     opacity: 0.9;
-    word-break: break-all;
+    word-break: break-word;
 }
 
 .postTitle {
@@ -246,7 +246,7 @@ h5 {
 
 .post-content p {
     width: 100%;
-    word-break: break-all;
+    word-break: break-word;
     word-wrap: normal;
     margin: 5px;
 }
