@@ -11,7 +11,6 @@ function loadPosts() {
         })
         .then (data => {
             let postData = data.posts;
-            console.log(postData);
             const postSelector = document.querySelector('.posts');
             postData.reverse().forEach(post => {
                 const postCard = document.createElement('div');
@@ -29,6 +28,8 @@ function loadPosts() {
                 const close = document.createElement('span');
                 close.className = "close-btn";
                 close.textContent = 'X';
+                close.addEventListener('click', sendDelete.bind(this, post.id, data.posts.length));
+
                 postHeader.appendChild(close);
                 postCard.appendChild(postHeader);
                 const postContent = document.createElement('div');
@@ -88,6 +89,7 @@ function loadPosts() {
                 const commentDiv = document.createElement('div');
                 commentDiv.className = 'comments-section'; 
                 postFooter.insertAdjacentElement('afterend', commentDiv);
+                console.log(postSelector);
             })
             const commentBoxes = document.getElementsByClassName('comments');
             for (let i = 0; i < commentBoxes.length; i++) {
@@ -102,7 +104,7 @@ function openComments(id, post) {
     const comments = document.createElement('div');
     const addComment = document.createElement('input');
     let comment;
-    let commentCount;
+    console.log(post.comments);
     addComment.addEventListener('keypress', (event) => {
         var key = event.key;
         if (key === 'Enter' && addComment.value !== '') {
@@ -115,11 +117,9 @@ function openComments(id, post) {
         }
     });
     for (let commentData of post.comments) {
-        commentCount += 1;
         comment = document.createElement('p');
         commentData.comment ? comment.innerText = commentData.comment : comment.innerText = commentData;
         comments.prepend(comment);
-        console.log(commentCount);
     };
     addComment.type = "text";
     addComment.className = "newComment";
@@ -181,15 +181,20 @@ function sendEmoji(id, emojiId, counter, button) {
     }
 }
 
-//close button
-// const closeBtn = document.querySelector('closeBtn');
-
-// closeBtn.addEventListener('click', () => {
-//     console.log("Close button clicked")
-//   });
-
-document.addEventListener('click',function(e){
-    if(e.target && e.target.className == 'close-btn'){
-        console.log("Close button clicked")
+function sendDelete(id, length) {
+    if (length > 1) {
+        var answer = window.confirm("Are you sure you want to delete this story?");
+        if (answer) {
+            const settings = {
+                method: 'DELETE'
+            }
+            fetch(`https://granny-smith-server.herokuapp.com/posts/${id}`, settings)
+            .then(data => {
+                //refresh page after delete
+                window.location.href = "./posts.html";
+            })
+        }
+    } else {
+        alert("We need to keep at least one post or else there will be nothing to read!");
     }
-});
+}
