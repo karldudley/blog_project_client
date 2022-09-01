@@ -27,8 +27,6 @@ function findGif (ev) {
         console.error(err);
       });
   }
-
-
 }
 
 // create a new post and send it to server
