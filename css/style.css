@@ -167,32 +167,27 @@ hr {
 /* Styling for the post wall page. */
 
 .posts {
-    margin: 4rem;
-    margin-left: 200px;
     display: grid;
-    grid-gap: 0;
-    grid-row-gap: 30px;
+    margin: 10px;
+    grid-gap: 10px;
     grid-template-columns: 1fr 1fr;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.post {
-    width: 43rem;
 }
 
 .post-header {
     background-color: rgba(211, 211, 211, 0.315);
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 30fr 30fr 2fr;
+    height: 65px;
+    align-items: center;
+    padding-bottom: 5px;
 }
 
 .post-header h4 {
-    margin: 10px;
+
     font-weight: bold;
 }
 
-h5 {
+.post-header h5 {
     margin-top: 14px;
     padding-right: 40%;
     color: rgba(88, 88, 88, 0.911);
