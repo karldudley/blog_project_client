@@ -1,7 +1,9 @@
 //giphy api key
 let APIKEY = "5rOj5wnf6ba5PRgcSmo3sQoXBK4St48P";
 
-document.querySelector('#gifForm').addEventListener('keypress', function (ev) {
+document.querySelector('#gifForm').addEventListener('keypress', findGif);
+
+function findGif (ev) {
   if (ev.key === 'Enter') {
     ev.preventDefault(); //to stop the page reload
 
@@ -27,7 +29,7 @@ document.querySelector('#gifForm').addEventListener('keypress', function (ev) {
   }
 
 
-});
+}
 
 // create a new post and send it to server
 
@@ -58,4 +60,9 @@ function submitPost(e){
           window.location.href = "./posts.html";
         })
         .catch(console.warn)
-};
+}
+
+module.exports = {
+  submitPost,
+  findGif
+}
