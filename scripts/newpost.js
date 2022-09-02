@@ -23,12 +23,14 @@ function findGif (ev) {
           let gifURL = document.querySelector("form .story-details h1")
           const prevGifButton = document.createElement('button');
           prevGifButton.className = ('previous');
+          prevGifButton.type = 'button';
           const prevArrow = document.createElement('img');
           prevArrow.id = ('prevArrow');
           prevArrow.src = '../assets/left.png';
           prevArrow.alt = 'Left arrow icon';
           prevGifButton.appendChild(prevArrow);
           const nextGifButton = document.createElement('button');
+          nextGifButton.type = 'button';
           const nextArrow = document.createElement('img');
           nextArrow.id = ('prevArrow');
           nextArrow.src = '../assets/right.png';
@@ -57,7 +59,6 @@ function findGif (ev) {
             console.log(currentIndex)
             if (currentIndex >= gifs.length) {
               currentIndex = 0;
-              console.log('yes');
             }
             let currentGif = gifs[currentIndex];
             gifURL.textContent = currentGif.images.downsized.url
