@@ -1,6 +1,14 @@
 # Granny Smith's Message Board (Client)
 <img src="./assets/grannysmith.jpg" alt="drawing" width="250"/>
 
+Have something you want to tell Granny?
+
+Perhaps you want to tell her what you made for dinner today?
+
+Or maybe you're on the run from police for a terrible crime you just committed and want to confess? Either way, Granny Smith is all ears.
+
+Post whatever you like anonymously for people around the world to see, free of judgement. (That could never go wrong right?)
+
 ## Project Description
 The aim of the project was to build a community journaling website that allows users to anonomously post and respond to stories.
 ## Table of contents
@@ -13,7 +21,7 @@ The aim of the project was to build a community journaling website that allows u
 7. [Testing](/README.md#testing)
 8. [Future Features](/README.md#future-features)
 9. [License](/README.md#license)
-10. [Contributers](/README.md#contributers)
+10. [Contributors](/README.md#contributors)
 
 ## Installation
 * Clone or download the [repo](https://github.com/karldudley/blog_project_client).
@@ -172,7 +180,7 @@ function findGif (ev) {
 ## License
 ## ![GitHub](https://img.shields.io/github/license/karldudley/blog_project_client?color=green&logo=Granny%20Smith%27s&style=plastic)
 
-## Contributers
+## Contributors
 
 ### [Matthew Blackman](https://github.com/ultimafinal1)
 ### [Camila Pessoa](https://github.com/Nevashka)
