@@ -418,6 +418,44 @@ form .button input:hover {
     line-height: 40px;
 }
 
+.gifDiv button {
+    position: absolute;
+    border-radius: 0;
+    width: 50px;
+    background-color: #f0edee00;
+    border: none;
+}
+
+button.next {
+    right: 0px;
+}
+
+#prevArrow {
+    object-fit: contain;
+    width: 40px;
+    opacity: 0.6;
+}
+
+#prevArrow:hover {
+    opacity: 1;
+}
+
+#nextArrow {
+    object-fit: contain;
+    width: 40px;
+    opacity: 0.6;
+}
+
+#nextArrow:hover {
+    opacity: 1;
+}
+
+
+.gifDiv {
+    display: inline-block;
+    position: relative;
+}
+
 /* Media Queries */
 
 @media (max-width: 1230px) {
